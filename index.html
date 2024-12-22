@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+
+    <!-- Swiper CSS & Normal CSS-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="styles.css">    
+
+  </head>
+  <body>
+
+    <header>
+      <h1>Welcome to My Portfolio</h1>
+    </header>
+
+    <nav>
+      <ul>
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <section id="about">
+      <h2>About Me</h2>
+      <div class="about-container">
+        <img src="my-pic.jpg" alt="A photo of me" class="profile-pic">
+        <p>I am a third-year Computer Science & Mathematics student at Southwest Baptist University. 
+          SBU has prepared me well, with its ABET-accredited Computer Science program, for a software developing career. 
+          Along with my second major of Mathematics, I find myself well equipped to tackle any task a potential employer may throw at me.</p>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="swiper projSwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="survey.jpg" alt="Project 1">
+            <a href="https://github.com/bsquared1504/Survey-Form"><h3>Survey Form</h3></a>
+            <p>Survey Form Project from FreeCodeCamp. Resembles a form one 
+              would fill out to apply to star in a movie.</p>
+            <h4>Uses:</h4>
+            <div class="image-row">
+              <img src="html-icon.png" alt="HTML icon">
+              <img src="css-icon.png" alt="CSS icon">
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <img src="rps.png" alt="Project 2">
+            <a href="https://github.com/bsquared1504/RockPaperScissors"><h3>Rock Paper Scissors</h3></a>
+            <p>Created in SBU's UI/UX Course. Resembles a rock, paper, 
+              scissors game, but uses a Star Wars Theme.</p>
+            <h4>Uses:</h4>
+            <div class="image-row">
+              <img src="visual-basic-icon.png" alt="Visual Basic icon">
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <img src="lineEditor.jpg" alt="Project 3">
+            <a href="https://github.com/bsquared1504/Line-Editor"><h3>Line Editor</h3></a>
+            <p>Created in SBU's CSII Course. Is a line editor in which 
+              one could write and print from a specified file.</p>
+            <h4>Uses:</h4>
+            <div class="image-row">
+              <img src="java-icon.png" alt="Java icon">
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <img src="parallel.jpg" alt="Project 4">
+            <a href="https://github.com/bsquared1504/Parallel-Sorting-Algorithm"><h3>Parallel Sorting</h3></a>
+            <p>Parallel Sorting Algorithm project created in SBU's ADS 
+              Class. Created in Java alongside with Linear Runtime Sorting Algorithm in C.</p>
+              <h4>Uses:</h4>
+              <div class="image-row">
+                <img src="java-icon.png" alt="Java icon">
+              </div>  
+          </div>
+          <div class="swiper-slide">
+            <img src="linear.jpg" alt="Project 5">
+            <a href="https://github.com/bsquared1504/Linear-Runtime-Sorting-Algorithm"><h3>Linear Runtime Sorting</h3></a>
+            <p>Linear Runtime Sorting Algorithm project created in SBU's ADS Class. 
+              Created in C alongside with Parallel Sorting Algorithm in Java.</p>
+              <h4>Uses:</h4>
+              <div class="image-row">
+                <img src="c-icon.png" alt="C icon">
+              </div>  
+          </div>
+          <div class="swiper-slide">
+            <img src="MadLibs.png" alt="Project 6">
+            <a href="https://github.com/bsquared1504/MadLibs"><h3>Mad Libs</h3></a>
+            <p>Created in SBU's UI/UX Course. Resembles the popular Mad Libs workbooks.</p>
+              <h4>Uses:</h4>
+              <div class="image-row">
+                <img src="visual-basic-icon.png" alt="Visual Basic icon">
+              </div>  
+          </div>
+          <div class="swiper-slide">
+            <img src="maze.jpg" alt="Project 7">
+            <a href="https://github.com/bsquared1504/Maze-Solver-Redux"><h3>Maze Solver</h3></a>
+            <p>Created in SBU's CSII Course. Is a maze solver in which 
+              it uses specific "maze" files and animates a solution to
+              get through them.</p>
+              <h4>Uses:</h4>
+              <div class="image-row">
+                <img src="java-icon.png" alt="Java icon">
+              </div>  
+          </div>
+          <div class="swiper-slide">
+            <img src="pl_logo.jpg" alt="Project 8">
+            <a href="https://github.com/bsquared1504/Plumb-Line-Services-Webpage-Unfinished"><h3>Website Mockup</h3></a>
+            <p>Final Project for Web Design course from SBU. Is a baseplate for a website for 
+              my father's company. Project was cut short and is unfinished.</p>
+              <h4>Uses:</h4>
+              <div class="image-row">
+                <img src="html-icon.png" alt="HTML icon">
+                <img src="css-icon.png" alt="CSS icon">
+                <img src="javascript-icon.png" alt="JS icon">
+              </div>  
+          </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Me</h2>
+      <div class="contact-links">
+        <a href="mailto:brownbrady1984@gmail.com" target="_blank">
+          <img src="email-icon.png" alt="Email" />
+          Email
+        </a>
+        <a href="https://www.linkedin.com/in/brown-brady" target="_blank">
+          <img src="linkedin-icon.png" alt="LinkedIn" />
+          LinkedIn
+        </a>
+        <a href="https://github.com/bsquared1504" target="_blank">
+          <img src="github-icon.png" alt="GitHub" />
+          GitHub
+        </a>
+      </div>
+    </section>
+
+    <!--Swiper JS-->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".projSwiper", {
+        slidesPerView: 3,
+        spaceBetween: 30,
+        grabCursor: true,
+        freeMode: true,
+        keyboard: {
+          enabled: true,
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        }
+      });
+    </script>
+    
+  </body>
+</html>
