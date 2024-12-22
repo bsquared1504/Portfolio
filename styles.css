@@ -226,3 +226,27 @@ nav ul li a:hover{
   height: 24px;
   margin-right: 10px;
 }
+
+/* Responsive Design */
+
+@media (max-width: 600px){
+  html{
+    font-size: 90%;
+  }
+
+  .swiper-slide p{
+    margin-bottom: 30px;
+  }
+  
+}
+
+@media (min-width: 601px) and (max-width: 1024px){
+  html{
+    font-size: 95%;
+  }
+
+  .swiper-slide p{
+    margin-bottom: 30px;
+  }
+
+}
