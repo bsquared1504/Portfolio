@@ -1,0 +1,80 @@
+/* Custom Things */
+
+@font-face {
+  font-family: 'NetflixFont';
+  src: url('../fonts/NetflixSans-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Broad CSS */
+
+html{
+  background-color: #141414;
+  font-family: 'NetflixFont';
+}
+
+body{
+  margin: 0;
+  padding: 0;
+}
+
+#main{
+  height: 97.5%;
+  width: 92.5%;
+  margin: 0 auto;
+}
+
+/* Header CSS */
+
+#header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#headerDiv{
+  width: 100%;
+}
+
+/* Logo */
+#logoDiv{
+  width: 10%;
+}
+
+#bigLogo{
+  width: 100%;
+}
+
+/* Links */
+#linksDiv{
+  width: 60%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.pageLink{
+  text-decoration: none;
+  color: white;
+
+}
+
+/* Search */
+#searchDiv{
+  width: 30%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+#searchButton{
+  background: transparent;
+  border: none;
+}
+
+button:hover{
+  cursor: pointer;
+}
+
+.icon{
+  width: 25px;
+}
