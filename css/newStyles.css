@@ -20,7 +20,7 @@ body{
 }
 
 #main{
-  height: 97.5%;
+  height: 99%;
   width: 92.5%;
   margin: 0 auto;
 }
@@ -39,7 +39,8 @@ body{
 
 /* Logo */
 #logoDiv{
-  width: 10%;
+  width: 7.5%;
+  margin-right: -150px;
 }
 
 #bigLogo{
@@ -48,22 +49,56 @@ body{
 
 /* Links */
 #linksDiv{
-  width: 60%;
+  width: 62.5%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
 }
 
 .pageLink{
   text-decoration: none;
-  color: white;
+  color: #dddddd;
+  font-size: 14px;
+}
 
+.pageLink:hover:not(.current){
+  color: #999999;
+  transition: color 0.3s ease;
+}
+
+.current{
+  color: white;
+  font-weight: bold;
 }
 
 /* Search */
-#searchDiv{
-  width: 30%;
+#searchDiv {
+  position: relative;
+  width: 150px; /* enough space for both icon and input */
   display: flex;
   justify-content: flex-end;
+  align-items: center;
+  overflow: visible; /* prevent layout shifting */
+}
+
+#searchBox {
+  position: absolute;
+  right: 35px; /* adjust depending on icon size */
+  width: 0;
+  opacity: 0;
+  padding: 5px;
+  font-size: 1rem;
+  background-color: #222;
+  color: white;
+  border: 1px solid #555;
+  border-radius: 4px;
+  transition: width 0.5s ease, opacity 0.5s ease;
+  pointer-events: none;
+}
+
+#searchBox.visible {
+  width: 250px; /* desired final width */
+  opacity: 1;
+  pointer-events: auto;
 }
 
 #searchButton{
