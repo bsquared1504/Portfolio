@@ -40,7 +40,7 @@ body{
 /* Logo */
 #logoDiv{
   width: 7.5%;
-  margin-right: -150px;
+  margin-right: -125px;
 }
 
 #bigLogo{
@@ -73,37 +73,48 @@ body{
 /* Search */
 #searchDiv {
   position: relative;
-  width: 150px; /* enough space for both icon and input */
   display: flex;
-  justify-content: flex-end;
   align-items: center;
-  overflow: visible; /* prevent layout shifting */
+  justify-content: flex-end;
+  width: 250px;
 }
 
 #searchBox {
-  position: absolute;
-  right: 35px; /* adjust depending on icon size */
   width: 0;
   opacity: 0;
-  padding: 5px;
+  padding: 5px 10px 5px 35px;
   font-size: 1rem;
   background-color: #222;
   color: white;
   border: 1px solid #555;
   border-radius: 4px;
-  transition: width 0.5s ease, opacity 0.5s ease;
+  transition: width 0.4s ease, opacity 0.4s ease;
   pointer-events: none;
+  z-index: 1;
 }
 
 #searchBox.visible {
-  width: 250px; /* desired final width */
+  width: 200px;
   opacity: 1;
   pointer-events: auto;
 }
 
-#searchButton{
+#searchButton {
   background: transparent;
   border: none;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%) translateX(0);
+  transition: transform 0.4s ease;
+  z-index: 2;
+  cursor: pointer;
+}
+
+#searchBox.visible ~ #searchButton {
+  transform: translateY(-45%) translateX(-210px);
+  pointer-events: none;
+  opacity: 0.7;
 }
 
 button:hover{
