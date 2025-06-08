@@ -20,4 +20,20 @@ document.addEventListener("DOMContentLoaded", function () {
       searchBtn.classList.remove("disabled");
     });
   }
+
+  const headerDiv = document.getElementById("headerDiv");
+
+  function updateHeaderBackground() {
+    if (window.scrollY === 0) {
+      headerDiv.classList.add("top");
+      headerDiv.classList.remove("scrolled");
+    } else {
+      headerDiv.classList.add("scrolled");
+      headerDiv.classList.remove("top");
+    }
+  }
+
+  // On load and on scroll
+  updateHeaderBackground();
+  window.addEventListener("scroll", updateHeaderBackground);
 });
