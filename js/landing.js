@@ -36,4 +36,21 @@ document.addEventListener("DOMContentLoaded", function () {
   // On load and on scroll
   updateHeaderBackground();
   window.addEventListener("scroll", updateHeaderBackground);
+
+
+  document.querySelectorAll('.swiper-container').forEach((swiperEl, index) => {
+  const nextBtn = swiperEl.querySelector('.swiper-button-next');
+  const prevBtn = swiperEl.querySelector('.swiper-button-prev');
+
+    new Swiper(swiperEl, {
+      slidesPerView: 5,
+      spaceBetween: 10,
+      navigation: {
+        nextEl: nextBtn,
+        prevEl: prevBtn,
+      },
+    });
+
+  });
+  
 });
