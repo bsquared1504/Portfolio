@@ -267,7 +267,8 @@ button:hover{
 .swiper-container {
   position: relative;
   width: 100%;
-  padding: 10px 0;
+  padding: 10px 10px;
+  margin-left: -12px;
 }
 
 .swiper-slide {
@@ -290,16 +291,44 @@ button:hover{
 
 .swiper-button-next,
 .swiper-button-prev {
-  top: 50%;
+  top: calc(50% - 42.5px) !important;
+  transform: none !important;
   z-index: 10;
   color: white !important;
-  border: 2px solid red;
+  border-radius: 2px;
+  background-color: rgba(20,20,20,0.1) !important;
+  padding: 42.5px 12.5px;
+  transition: background 0.2s ease, transform 0.2s ease;
+  opacity: 0;
 }
 
 .swiper-button-prev {
-  left: -50px !important; 
+  left: -47.5px !important; 
 }
 
 .swiper-button-next {
-  right: -50px !important; 
+  right: -52.5px !important; 
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover{
+  background-color: rgba(20,20,20,0.7) !important;
+  transform: scale(1.2) !important;
+}
+
+.swiper-container:hover .swiper-button-next,
+.swiper-container:hover .swiper-button-prev,
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  opacity: 1;
+}
+
+.disabled{
+  opacity: 0 !important;
+  pointer-events: none;
+}
+
+.focus{
+  box-sizing: border-box;
+  border: 2px solid red;
 }

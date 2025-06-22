@@ -38,19 +38,40 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("scroll", updateHeaderBackground);
 
 
-  document.querySelectorAll('.swiper-container').forEach((swiperEl, index) => {
-  const nextBtn = swiperEl.querySelector('.swiper-button-next');
-  const prevBtn = swiperEl.querySelector('.swiper-button-prev');
+  document.querySelectorAll('.swiper-container').forEach((row, index) => {
+    const nextBtn = row.querySelector('.swiper-button-next');
+    const prevBtn = row.querySelector('.swiper-button-prev');
+    clicked = false;
 
-    new Swiper(swiperEl, {
+    const swiper = new Swiper(row, {
       slidesPerView: 5,
       spaceBetween: 10,
+      slidesPerGroup: 5,
+      speed: 800,
+      loop: true,
       navigation: {
         nextEl: nextBtn,
         prevEl: prevBtn,
       },
     });
 
+    prevBtn.classList.add("disabled");
+
+    nextBtn.addEventListener("click", () => {
+      prevBtn.classList.remove("disabled");
+    });
+
   });
   
+  document.querySelectorAll('.swiper-slide').forEach((slide => {
+
+    slide.addEventListener("mouseenter", function () {
+      this.classList.add("focus");
+    });
+
+    slide.addEventListener("mouseleave", function () {
+      this.classList.remove("focus");
+    });
+  }));
+
 });
