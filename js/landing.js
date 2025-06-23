@@ -61,17 +61,42 @@ document.addEventListener("DOMContentLoaded", function () {
       prevBtn.classList.remove("disabled");
     });
 
+    document.querySelectorAll('.swiper-slide').forEach((slide => {
+      let hoverTimeout;
+
+      slide.addEventListener("mouseenter", function () {
+        hoverTimeout = setTimeout(() => {
+          this.classList.add("focus");
+        }, 500);
+      });
+
+      slide.addEventListener("mouseleave", function () {
+        clearTimeout(hoverTimeout);
+        this.classList.remove("focus");
+      });
+    
+    }));
+
+    swiper.on('slideChange', () => {
+      // Remove previous markers
+      swiper.slides.forEach(slide => {
+        slide.classList.remove('first-visible', 'last-visible');
+      });
+
+      // Get first and last visible index
+      const firstIndex = swiper.activeIndex;
+      const lastIndex = swiper.activeIndex + swiper.params.slidesPerView - 1;
+
+      // Add custom classes
+      if (swiper.slides[firstIndex]) {
+        swiper.slides[firstIndex].classList.add('first-visible');
+      }
+
+      if (swiper.slides[lastIndex]) {
+        swiper.slides[lastIndex].classList.add('last-visible');
+      }
+    });
+
   });
-  
-  document.querySelectorAll('.swiper-slide').forEach((slide => {
-
-    slide.addEventListener("mouseenter", function () {
-      this.classList.add("focus");
-    });
-
-    slide.addEventListener("mouseleave", function () {
-      this.classList.remove("focus");
-    });
-  }));
 
 });
