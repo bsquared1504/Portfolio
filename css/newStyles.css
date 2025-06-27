@@ -271,6 +271,12 @@ button:hover{
   margin-left: -12px;
 }
 
+.swiper-wrapper{
+  overflow: visible;
+  display:flex;
+  align-items: center;
+}
+
 /* Swiper Button CSS */
 
 .swiper-button-next,
@@ -314,10 +320,28 @@ button:hover{
 
 /* Swiper Card CSS */
 
+.swiper-slide {
+  width: 215px;
+  max-width: 215px;
+  height: auto;
+  background-color: #222;
+  border-radius: 2px;
+  overflow: visible;
+  position: relative !important;
+  display: flex;
+  align-items: center;
+  z-index: 1 !important;
+}
+
+.swiper-slide.active {
+  z-index: 1000 !important;
+}
+
 .focus{
-  transform: scale(1.5) !important;
-  z-index: 50;
-  cursor: default !important;
+  transform: scale(1.50) !important;
+  pointer-events: auto !important;
+  opacity: 1 !important;
+  z-index: 999 !important;
 }
 
 .first-visible{
@@ -328,25 +352,87 @@ button:hover{
   transform-origin: right center;
 }
 
-.swiper-slide {
-  width: 215px;
-  max-width: 215px;
-  height: 125px;
-  max-height: 125px;
+.slide-popup {
+  position: absolute !important;
+  top: -30px;
+  left: -10px;
+  margin-left: 10px;
+  background: #222;
+  color: white;
+  border-radius: 4px;
+  padding: 10px;
+  width: 200px;
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.75);
+  transform-origin: left center;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
 
-  background-color: #222;
-  border-radius: 2px;
-  overflow: hidden;
-  position: relative;
-  transition: transform 0.2s ease;
+.slide-popup-image{
+  width: 100%;
+  height: 125px;
+  overflow: visible;
+}
+
+.slide-popup-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  overflow: visible;
 }
 
 .swiper-slide:hover{
   cursor: pointer;
 }
 
-.swiper-slide img {
+.slide-image{
+  width: 100%;
+  height: 125px;
+  overflow: visible;
+  z-index: 1 !important;
+  position: relative;
+}
+
+.slide-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  z-index: 1 !important;
+  position: relative;
+}
+
+.slide-title {
+  font-size: 14px;
+  color: #fff;
+  margin: 0;
+}
+
+.slide-title,
+.slide-btn button {
+  margin: 5px 0;
+}
+
+.slide-btn {
+  padding: 6px 10px;
+  font-size: 12px;
+  border: none;
+  border-radius: 2px;
+  background-color: white;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.slide-btn.secondary {
+  background-color: rgba(109, 109, 110, 0.7);
+}
+
+.slide-btn:hover {
+  background-color: #e6e6e6;
+}
+
+.slide-btn.secondary:hover {
+  background-color: rgba(109, 109, 110, 1);
 }

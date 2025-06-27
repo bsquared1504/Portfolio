@@ -61,22 +61,6 @@ document.addEventListener("DOMContentLoaded", function () {
       prevBtn.classList.remove("disabled");
     });
 
-    document.querySelectorAll('.swiper-slide').forEach((slide => {
-      let hoverTimeout;
-
-      slide.addEventListener("mouseenter", function () {
-        hoverTimeout = setTimeout(() => {
-          this.classList.add("focus");
-        }, 500);
-      });
-
-      slide.addEventListener("mouseleave", function () {
-        clearTimeout(hoverTimeout);
-        this.classList.remove("focus");
-      });
-    
-    }));
-
     swiper.on('slideChange', () => {
       // Remove previous markers
       swiper.slides.forEach(slide => {
@@ -98,5 +82,31 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
   });
+
+  document.querySelectorAll('.swiper-slide').forEach((slide => {
+      let hoverTimeout;
+      const popup = slide.querySelector('.slide-popup');
+
+      slide.addEventListener("mouseenter", function () {
+        hoverTimeout = setTimeout(() => {
+          if (popup) {
+            popup.classList.add("focus");
+            slide.classList.add("active-popup");
+          }
+        }, 500);
+      });
+
+      slide.addEventListener("mouseleave", function () {
+        clearTimeout(hoverTimeout);
+      });
+
+      popup.addEventListener("mouseleave", function () {
+        if (popup) {
+          popup.classList.remove("focus");
+          slide.classList.remove("active-popup");
+        }
+      });
+    
+  }));
 
 });
